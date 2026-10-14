@@ -1,0 +1,32 @@
+INSTRUCCIONES PARA INTEGRAR LA TAREA EN lab08-dom
+
+1. Copia la carpeta `tarea/` y el archivo `notas/TAREA.md` a tu repositorio existente.
+2. Abre `notas/TAREA.md` y registra el resultado real de cada prueba. No marques "Sí" hasta probarlo.
+3. Para que los commits representen iteraciones reales, trabaja en este orden desde la raíz del repositorio:
+
+VERSIÓN 1:
+- Crea tarea/index.html con la estructura de la interfaz.
+- Coloca temporalmente el código de la sección "Version 1" de notas/TAREA.md en tarea/app.js.
+- Registra la sección de versión 1 en notas/TAREA.md.
+- git add tarea/index.html tarea/app.js notas/TAREA.md
+- git commit -m "Tarea v1: estructura del componente y DOM"
+- git push origin main
+
+VERSIÓN 2:
+- Sustituye tarea/app.js temporalmente por el código principal de la versión 2 de notas/TAREA.md.
+- Comprueba formulario, validación y botones. Anota los resultados.
+- git add tarea/app.js notas/TAREA.md
+- git commit -m "Tarea v2: agrega eventos y validacion"
+- git push origin main
+
+VERSIÓN 3:
+- Coloca el código completo final de tarea/app.js que viene en esta carpeta.
+- Actualiza README.md agregando los enlaces que aparecen en README-ENLACES.md (no reemplaces contenido previo que quieras conservar).
+- Revisa la tabla de pruebas y completa los resultados reales.
+- git add tarea/app.js notas/TAREA.md README.md tarea/index.html
+- git commit -m "Tarea v3: incorpora clase Tarea y filtros"
+- git push origin main
+
+IMPORTANTE:
+- Los bloques resumidos de las versiones 1 y 2 en TAREA.md sirven para documentar el código principal de cada etapa. Para un historial totalmente fiel, reconstruye y prueba cada etapa antes de pasar a la siguiente.
+- No es posible confirmar desde este paquete que GitHub Pages esté activo ni que los commits se hayan subido. Comprueba Settings > Pages y abre la URL publicada tras el push.

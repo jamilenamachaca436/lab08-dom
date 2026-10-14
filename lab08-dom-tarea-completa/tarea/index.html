@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi lista de tareas | Laboratorio 08</title>
+  <style>
+    :root { --verde: #247a58; --fondo: #f3f7f4; --texto: #20352b; --borde: #d8e3dc; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 28px 16px; font-family: Arial, sans-serif; background: var(--fondo); color: var(--texto); }
+    main { max-width: 760px; margin: auto; background: white; padding: 28px; border-radius: 16px; box-shadow: 0 8px 28px #173d2512; }
+    h1 { margin-top: 0; color: var(--verde); }
+    .intro { color: #53675b; line-height: 1.5; }
+    form { display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0 8px; }
+    input { flex: 1; min-width: 190px; padding: 12px; border: 1px solid var(--borde); border-radius: 8px; font-size: 1rem; }
+    button { border: 0; border-radius: 8px; padding: 11px 14px; cursor: pointer; font-weight: 700; }
+    .add { background: var(--verde); color: white; }
+    .secondary { background: #e9f0eb; color: #254936; }
+    .delete { background: #fde9e7; color: #a12f28; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+    #mensaje { min-height: 24px; margin: 8px 0; font-weight: 600; }
+    #mensaje.error { color: #b42318; }
+    #mensaje.ok { color: var(--verde); }
+    #listaTareas { padding: 0; list-style: none; display: grid; gap: 10px; }
+    .tarea { display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--borde); border-radius: 10px; padding: 13px; }
+    .contenido { min-width: 0; }
+    .nombre-tarea { overflow-wrap: anywhere; }
+    .terminada .nombre-tarea { text-decoration: line-through; color: #718078; }
+    .estado { display: block; font-size: .82rem; color: #66766d; margin-top: 5px; }
+    .acciones { display: flex; gap: 7px; flex-shrink: 0; flex-wrap: wrap; }
+    .resumen { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--borde); color: #53675b; }
+    @media (max-width: 520px) { main { padding: 20px; } .tarea { align-items: flex-start; flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Mi lista de tareas</h1>
+    <p class="intro">Organizo mis pendientes, marco lo que termino y elimino las tareas que ya no necesito.</p>
+
+    <form id="formTarea">
+      <input id="entradaTarea" type="text" maxlength="100" placeholder="Ej.: Repasar JavaScript" aria-label="Descripción de la tarea">
+      <button class="add" type="submit">Agregar tarea</button>
+    </form>
+    <p id="mensaje" role="status" aria-live="polite"></p>
+
+    <div class="filters" aria-label="Filtros de tareas">
+      <button class="secondary" type="button" data-filtro="todas">Todas</button>
+      <button class="secondary" type="button" data-filtro="pendientes">Pendientes</button>
+      <button class="secondary" type="button" data-filtro="terminadas">Terminadas</button>
+    </div>
+
+    <ul id="listaTareas"></ul>
+    <p class="resumen">Total: <strong id="totalTareas">0</strong> · Pendientes: <strong id="totalPendientes">0</strong> · Terminadas: <strong id="totalTerminadas">0</strong></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
